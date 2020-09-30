@@ -27,6 +27,7 @@ Above is a visualization of our logistic regression model, where the blue curve 
 ![Graph2](https://miro.medium.com/max/1200/1*_xpHkZNnvVJC0XKYYO6D8g.png)
 
 Our decision tree nodes will look something like this, where each arrow points to a new node for a new feature until we reach a decision. Here we can visualize how the tree will be able make a discrete binary decision.
+ 
 For both of these methods, we can calculate the accuracy by dividing the number of correct predictions by the number of total predictions made. We want to use whatever model consistently produces the highest accuracy (the lowest error rate) [4].
 
 __Discussion:__
