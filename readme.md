@@ -20,7 +20,7 @@ Logistic regression is an appropriate technique for classifying a binary depende
 Another classification algorithm that we could use is with decision trees. We can have either classification or regression trees [7], so in this case, we would want to use a binary classification tree. These trees have discrete decision variables, so we will get a result that will predict either “yes” or “no”.
 
 __Potential Results:__
-![Graph](/images/graph.png)
+![Graph](/images/graph.jpeg)
 
 Above is a visualization of our logistic regression model, where the blue curve is the sigmoid function that determines the classification of each datapoint. The x’s and circles represent songs, and we can see in the key in the top left corner how the points corresponding to a higher probability are classified as 1s, and the points matching a lower probability are classified as 0s.
 
