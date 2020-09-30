@@ -33,11 +33,11 @@ __Discussion:__
 Several models have been proposed to predict a song’s success [1]. From current results, Linear Regression and Neural Net models have the highest accuracy of 73% and 77% respectively [2]. However, changing the time parameters to focus on recent music from 2015 to 2018 yielded better results for the NN with an accuracy of around 86% but worse results for LR with a rating of around 72% [2]. This shows that newer songs are becoming harder to predict with previous models. It’s possible that between 2015 to 2018 there was a change occurring in the overall taste of music or that the general population was becoming more aware of other genres of music. Thus, it will be important to try different variations of models to ensure a high accuracy rating is achieved.
 
 __References:__
-[1] https://towardsdatascience.com/song-popularity-predictor-1ef69735e380
-[2] http://cs229.stanford.edu/proj2018/report/16.pdf
+[1] https://towardsdatascience.com/song-popularity-predictor-1ef69735e380 \
+[2] http://cs229.stanford.edu/proj2018/report/16.pdf \
 [3] https://github.com/siddgood/billboard-hit-prediction
-[4] https://data.library.virginia.edu/visualizing-the-effects-of-logistic-regression/
-[5] https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/
-[6] https://www.sciencedirect.com/topics/medicine-and-dentistry/logistic-regression-analysis 
-[7] https://www-users.cs.umn.edu/~kumar001/dmbook/ch4.pdf 
-[8] https://data.world/kcmillersean/billboard-hot-100-1958-2017
+[4] https://data.library.virginia.edu/visualizing-the-effects-of-logistic-regression/ \
+[5] https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/ \
+[6] https://www.sciencedirect.com/topics/medicine-and-dentistry/logistic-regression-analysis \
+[7] https://www-users.cs.umn.edu/~kumar001/dmbook/ch4.pdf \
+[8] https://data.world/kcmillersean/billboard-hot-100-1958-2017 \
