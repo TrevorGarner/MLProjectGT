@@ -1,4 +1,4 @@
-# ML Project for CS 4641 Machine Learning @ Georgia Tech (Group #18)
+# ML Project for CS 4641 @ Georgia Tech (Group #18)
 
 ## Project Proposal - Predicting Top Chart Songs Using Spotify Data:
 
