@@ -38,3 +38,6 @@ __References:__
 [3] https://github.com/siddgood/billboard-hit-prediction
 [4] https://data.library.virginia.edu/visualizing-the-effects-of-logistic-regression/
 [5] https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/
+[6] https://www.sciencedirect.com/topics/medicine-and-dentistry/logistic-regression-analysis 
+[7] https://www-users.cs.umn.edu/~kumar001/dmbook/ch4.pdf 
+[8] https://data.world/kcmillersean/billboard-hot-100-1958-2017
