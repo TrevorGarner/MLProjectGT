@@ -1,5 +1,9 @@
 # ML Project for CS 4641 @ Georgia Tech (Group #18)
 
+## Project Proposal Video Link:
+
+https://www.youtube.com/watch?v=LbjDCJazt1Y&feature=youtu.be
+
 ## Project Proposal - Predicting Top Chart Songs Using Spotify Data:
 
 ![Header](/images/header.png)
