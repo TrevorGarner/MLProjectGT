@@ -52,10 +52,11 @@ Creating a predictive model using classification and regression algorithms using
 
 <!-- Data Collection -->
 <h3>Data Collection</h3>
+ Source: https://data.world/kcmillersean/billboard-hot-100-1958-2017 <br><br>
 We are dealing with two data sets: one from Billboard Hot 100 and one taken from Spotify’s API. 
 The HotStuff.cvs (Billboard dataset) contains each song that made the Hot 100 chart. We use the peak_position feature to track whether a song charted in the top 50 or not.
 The Billboard Hot 100 is based on sales, airplay, and total stream counts. This includes US based plays on YouTube (a song's music video). The specific formulas for each are a trade secret and thus, not available to evaluate or consider in our project. Instead, we use the Spotify data set to look for features specific to the song, and not consumer interaction with the song [cite this]. Spotify’s algorithm for calculating their features is also a trade secret and complicated, so we will not discuss the algorithms behind them. These features are calculated for every song that is published on their platform. Hence, we will be using this model to predict whether a song that has been published on their platform will chart in the top 50 of the Billboard Hot 100.
-Here are descriptions for what some of our features mean (taken from data set description for Hot 100 Audio Features.xlsx and Spotify developer website and the HotStuff.cvs (Billboard dataset) description):
+Here are descriptions for what some of our features mean (taken from data set description for Hot 100 Audio Features.xlsx and <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify developer website</a> and the HotStuff.cvs (Billboard dataset) description):
 <br><br>
 <!-- 2nd Illustrative Figure --> 
 <div style="text-align: center;">
@@ -68,7 +69,7 @@ Furthermore, because our data set encompasses all songs that charted on the Bill
 <br><br>
 <!-- Data Cleaning: -->
 <h3>Data Cleaning:</h3>
-To prepare our data for the learning models, we filtered out any unnecessary variables/features and joined the two data sets on song id. Both the Billboard and spotify data sets originally included thousands of entries. However, once we combined the two data sets and removed duplicate, irrelevant and incomplete entries, our data set was reduced to around 850 entries. A sample of our code for filtering entries from the Billboard set is below:
+To prepare our data for the learning models, we filtered out any unnecessary variables/features and joined the two data sets on song id. Both the Billboard and spotify data sets originally included thousands of entries. However, once we combined the two data sets and removed duplicate, irrelevant and incomplete entries, our data set was reduced to around 840 entries (data points). A sample of our code for filtering entries from the Billboard set is below:
 
 <br><br>
 index_names = billboard_df[ (billboard_df['WeekID'] < 2008) | (billboard_df['WeekID'] > 2019) ].index
@@ -81,8 +82,11 @@ billboard_df.dropna(axis=0, inplace=True)
 <br><br>
 
 Here, we remove entries that did not chart between 2008 and 2019, entries with the same song name, and entries that have any null feature fields. We chose the years 2008 and 2019 because Spotify only came out in 2008, and we know that the data for 2019 is complete, whereas data for 2020 may be updated at different times in the Billboard and Spotify datasets since the year is not over. Dropping duplicate songs is necessary because we only want to consider one time the song charted. This specific script only keeps the first instance of each song in the dataset, which worked for our purposes because there is a column that has the song’s peak position. Therefore, we could’ve kept any arbitrary entry for any given song. Finally, we opted to deal with null columns by removing any rows that had null values. Since there were not many rows that fell under this category, we chose this approach because the information loss would not be too large. However, there are other approaches that we considered that would’ve better dealt with information loss, such as filling in null fields with the most frequent value for that feature, or actually predicting the missing values.
-The reduction in size of our data set is logical. The spotify data set included songs not included in the billboard set. The billboard data set included an entry for every single week a song had charted, so we chose only to include the peak position of the song.
+The reduction in size of our data set is logical. The spotify data set included songs not included in the billboard set. The billboard data set included an entry for every single week a song had charted, so we chose only to include the peak position of the song. Our final sample size is 839.
 
+<br><br>
+Here is a link to our cleaned csv file: https://docs.google.com/spreadsheets/d/1ddZ9fi0sXQTxXZeBJxTznCIcxYV-qZpHucfTzU2B6A8/edit?usp=sharing  
+  
 <br><br>
 <!-- Feature Selection -->
 <h3>Feature Selection</h3>
@@ -114,11 +118,23 @@ It is evident that our Neural Net performs the best with our data, garning a acc
 
 <!-- Discussion -->
 <h3>Discussion</h3>
-Preliminary results show relatively robust prediction accuracy, well above the baseline (naive) approach, with the Neural Net accuracy peaking at 76.13%.  We believe accuracy is a bit worse than comparable approaches (achieving 80-90% using similar models as well as bagging, which we can add in future iterations) due to low feature variance, which can perhaps be remedied with more data cleaning and feature selection.  Another possible explanation for the accuracy loss is that listener preferences change over time––a song that charts in the top 50 in 2008 might not in 2015.  In future iterations, we would account for this impact using a Long Short-Term Memory (“LSTM”)  model.
+Preliminary results show relatively robust prediction accuracy, well above the baseline (naive) approach, with the Neural Net accuracy peaking at 76.13%.  We believe accuracy is a bit worse than comparable approaches (achieving 80-90% using similar models as well as bagging, which we can add in future iterations) due to low feature variance, which can perhaps be remedied with more data cleaning and feature selection.  Another possible explanation for the accuracy loss is that listener preferences change over time––a song that charts in the top 50 in 2008 might not in 2015.  In future iterations, we would account for this impact using a Long Short-Term Memory (“LSTM”)  model. 
+In our last report, we researched similar projects and based our prediction on their results: 
+Several models have been proposed to predict a song’s success [1]. From current results, Neural Net models have the highest accuracy of 77% [2]. However, changing the time parameters to focus on recent music from 2015 to 2018 yielded better results for the NN with an accuracy of around 86% [2]. This shows that newer songs are becoming harder to predict with previous models. It’s possible that between 2015 to 2018 there was a change occurring in the overall taste of music or that the general population was becoming more aware of other genres of music. Because of this, we implemented different variations of models to ensure a high accuracy rating is achieved and plan to test out some more as well, such as LR. Our prediction, for the most part, was accurate. NN had the highest accuracy of 76% (really close to the 77% accuracy our source got). 
 <br><br>
 
-
-
+<!-- References -->
+<h3>References</h3>
+References: <br><br>
+[1] https://towardsdatascience.com/song-popularity-predictor-1ef69735e380 <br><br>
+[2] http://cs229.stanford.edu/proj2018/report/16.pdf <br><br>
+[3] https://github.com/siddgood/billboard-hit-prediction <br><br>
+[4] https://data.library.virginia.edu/visualizing-the-effects-of-logistic-regression/ <br><br>
+[5] https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/ <br><br>
+[6] https://www.sciencedirect.com/topics/medicine-and-dentistry/logistic-regression-analysis  <br><br>
+[7] https://www-users.cs.umn.edu/~kumar001/dmbook/ch4.pdf <br><br>
+[8] https://data.world/kcmillersean/billboard-hot-100-1958-2017 <br><br>
+<br><br>
 
   <hr>
   <footer> 
