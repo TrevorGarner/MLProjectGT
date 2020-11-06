@@ -89,6 +89,11 @@ billboard_df.dropna(axis=0, inplace=True)
 Here, we remove entries that did not chart between 2008 and 2019, entries with the same song name, and entries that have any null feature fields. We chose the years 2008 and 2019 because Spotify only came out in 2008, and we know that the data for 2019 is complete, whereas data for 2020 may be updated at different times in the Billboard and Spotify datasets since the year is not over. Dropping duplicate songs is necessary because we only want to consider one time the song charted. This specific script only keeps the first instance of each song in the dataset, which worked for our purposes because there is a column that has the song’s peak position. Therefore, we could’ve kept any arbitrary entry for any given song. Finally, we opted to deal with null columns by removing any rows that had null values. Since there were not many rows that fell under this category, we chose this approach because the information loss would not be too large. However, there are other approaches that we considered that would’ve better dealt with information loss, such as filling in null fields with the most frequent value for that feature, or actually predicting the missing values.
 The reduction in size of our data set is logical. The spotify data set included songs not included in the billboard set. The billboard data set included an entry for every single week a song had charted, so we chose only to include the peak position of the song. Our final sample size is 839.
 
+<!-- 3rd Illustrative Figure --> 
+<div style="text-align: center;">
+<img style="height: 400px;" alt="" src="datasets.PNG">
+</div>
+  
 <br><br>
 <a href="https://docs.google.com/spreadsheets/d/1ddZ9fi0sXQTxXZeBJxTznCIcxYV-qZpHucfTzU2B6A8/edit?usp=sharing  ">Here is a link to our cleaned csv file </a>
 <br><br>
