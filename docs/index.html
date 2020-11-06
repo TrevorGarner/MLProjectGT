@@ -54,6 +54,11 @@ Creating a predictive model using classification and regression algorithms using
 <h3>Data Collection</h3>
  Source: https://data.world/kcmillersean/billboard-hot-100-1958-2017 <br><br>
 We are dealing with two data sets: one from Billboard Hot 100 and one taken from Spotify’s API. 
+<br><br>
+<!-- 2nd Illustrative Figure --> 
+<div style="text-align: center;">
+<img style="height: 400px;" alt="" src="charts.png">
+</div>
 The HotStuff.cvs (Billboard dataset) contains each song that made the Hot 100 chart. We use the peak_position feature to track whether a song charted in the top 50 or not.
 The Billboard Hot 100 is based on sales, airplay, and total stream counts. This includes US based plays on YouTube (a song's music video). The specific formulas for each are a trade secret and thus, not available to evaluate or consider in our project. Instead, we use the Spotify data set to look for features specific to the song, and not consumer interaction with the song [cite this]. Spotify’s algorithm for calculating their features is also a trade secret and complicated, so we will not discuss the algorithms behind them. These features are calculated for every song that is published on their platform. Hence, we will be using this model to predict whether a song that has been published on their platform will chart in the top 50 of the Billboard Hot 100.
 Here are descriptions for what some of our features mean (taken from data set description for Hot 100 Audio Features.xlsx and <a href="https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/">Spotify developer website</a> and the HotStuff.cvs (Billboard dataset) description):
