@@ -140,6 +140,8 @@ Here is a table outlining the pros and cons of these 3 classification techniques
 <br><br>
 In our case, a linear decision boundary worked better than a quadratic decision boundary which means that the feature covariance matrices of both classes are the same. The data itself is very spread out so QDA might not actually help. 
 <br><br>
+We also implemented Logistic Regression, which is an appropriate technique when classifying a binary dependent variable and does well when the data is linearly separable with few outliers. Logistic Regression predicts the probability of a song charting or not charting based on our features. Then, using a sigmoid function, will classify the event as a 1(for charting) or 0 (for not charting) based on the given probability being above or below 0.5.
+<br><br>
 Lastly, we implemented a Neural Network to predict our new data.  The architecture we chose is 10 input nodes, 4 hidden layers, and 1 output node. The more hidden layers there are, the more difficult it is to train the data, but the NN can find better relationships between the data points. We used the Sequential model for our network, which is essentially a linear stack of layers where each layer has exactly one input tensor and one output. Each node in the input layer corresponds to a feature for each song. Although there are two possible outputs (either a song chart or it does not), we only used one output node which indicates the probability of a song charting. If the probability is greater than 50%, then it is predicted that it will chart, and otherwise the prediction is that it will not.
 <br><br>
 
